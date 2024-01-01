@@ -60,14 +60,15 @@ window.signG = signG;
 
 
 const signI = () => {
+  // show.innerHTML = `<p>am working </p>`
     let email = yourEmail.value;
     let password = yourPass.value;
     yourEmail.value = "";
     yourPass.value = "";
     if (email == "" || password == "") {
-      showerr.innerHTML = `<p style="color:yellow; text-align:center;">Email and password cannot be left empty</p>`;
+      show.innerHTML = `<p style="color:red; text-align:center;">Email and password cannot be left empty !</p>`;
       setTimeout(() => {
-        showerr.style.display = "none";
+        show.style.display = "none";
       }, 4000);
     }
     signInWithEmailAndPassword(auth, email, password)
@@ -79,18 +80,17 @@ const signI = () => {
       .catch((error) => {
         let errorCode = error.code;
         console.log(errorCode);
-        // if (errorCode == "auth/invalid-login-credentials") {
-        //   showerr.innerHTML = `<p style="color:yellow; text-align:center;"> you have entered an invalid email and password</p>`;
-        //   setTimeout(() => {
-        //     showerr.style.display = "none";
-            
-        //   }, 4000);
-        // }else if(errorCode == "auth/internal-error" || errorCode == "auth/network-request-failed") {
-        //   showerr.innerHTML = `<p style="color:orange; text-align:center;">you are not connected to the internet</p>`;
-        //   setTimeout(() => {
-        //     showerr.style.display = "none";
-        //   }, 4000);
-        // }
+        if (errorCode === "auth/invalid-credential") {
+          show.innerHTML = `<p style="color: red; text-align:center;"> you have entered an invalid email and password !</p>`;
+          setTimeout(() => {
+            show.style.display = "none";
+          }, 4000);
+        }else if(errorCode === "auth/internal-error" || errorCode == "auth/network-request-failed") {
+          show.innerHTML = `<p style="color: red; text-align:center;">you are not connected to the internet !</p>`;
+          setTimeout(() => {
+            show.style.display = "none";
+          }, 4000);
+        }
       });
   };
   
