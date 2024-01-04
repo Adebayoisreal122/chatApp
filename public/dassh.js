@@ -40,10 +40,13 @@ onAuthStateChanged(auth, (user) => {
     } else {
       display.innerHTML = `
       <h3>${Cname}</h3>
-      <img src=${dispImg} style="border-radius: 100%;"  class="minus" title="profile picture"/>
       <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/exit.png" alt="exit" onclick="signOut()" />
-  
+      
+      
       `;
+      userImage.innerHTML = `
+      <img src=${dispImg} style="border-radius: 100%; width: 28px; height:28px"  class="minus" title="profile picture"/>
+      `
       }
     } else {
       window.location.href = "index.html";
