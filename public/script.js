@@ -100,36 +100,4 @@ const signI = () => {
 
 
   
-  const signU = () => {
-    let email = emailin.value;
-    let password = passwordin.value;
-    let identity = nam.value
-  
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        user.displayName = identity
-        console.log(user);
-        window.location.href = "index.html";
-      })
-      .catch((error) => {
-        let errorCode = error.code;
-        console.log(errorCode);
-        if (errorCode == "auth/email-already-in-use") {
-          showerr.innerHTML = `<p style="color:yellow; text-align:center;">This email already exists</p>`;
-          setTimeout(() => {
-            showerr.style.display = "none";
-          }, 4000);
-        } else {
-          yourOEmail.value = "";
-          yourOPass.value = "";
-        }
-      });
-  };
-  
-  window.signU = signU;
-  
-
-
-
   
