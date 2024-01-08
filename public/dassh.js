@@ -5,6 +5,13 @@ import {
     onAuthStateChanged,
     signOut,
   } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  import {
+    getDatabase,
+    ref,
+    set,
+    onValue,
+  } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,6 +21,7 @@ const firebaseConfig = {
     authDomain: "chatapp-e6b54.firebaseapp.com",
     projectId: "chatapp-e6b54",
     storageBucket: "chatapp-e6b54.appspot.com",
+    databaseURL: "https://chatapp-e6b54-default-rtdb.firebaseio.com",
     messagingSenderId: "530037692466",
     appId: "1:530037692466:web:68336e4e460ad711c4442b",
 };
@@ -21,7 +29,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-
+const database = getDatabase(app);
+let startPoint = 0;
 
 
 onAuthStateChanged(auth, (user) => {
@@ -73,7 +82,7 @@ const scrollToBottom = () => {
 const submitData = () => {
   let date = new Date().toLocaleDateString();
   let time = new Date().toLocaleTimeString();
-  let chatHr = chatH.value;
+  let chatHr = document.getElementById('chatH');
   onAuthStateChanged(auth, (user) => {
     let userName = user.displayName;
     let photo = user.photoURL;
