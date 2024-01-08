@@ -14,26 +14,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </head>
 <body class="bg-secondary">
-  <nav class=" d-flex p-lg-4 p-sm-4 nav align-item-center" style="background-color: rgba(148, 154, 233, 0.5);">
+  <nav class=" d-flex p-lg-3 p-sm-4 nav align-item-center" style="background-color: rgba(148, 154, 233, 0.5);">
     <div class="d-flex gap-2 mx-auto">
-
       <div class=" gap-2 d-flex container">
         <a class="" href="#"><img src="img/722625-removebg-preview.png" style="height: 40px; width: 45px;" alt=""></a>
         <div class="d-flex">
           <div class="d-flex gap-2 mx-auto">
             <div class="">
               <a class="mx-4-lg mx-sm-3" href="dashboard.html"><img src="img/home2-removebg-preview.png" style="height: 35px; width: 35px;" alt=""></a>
-              <a class="mx-4-lg mx-sm-3" href="dashboard.html"><img src="img/home2-removebg-preview.png" style="height: 35px; width: 35px;" alt=""></a>
+              <a class="mx-4-lg mx-sm-3" href="dashboard.html"><img src="img/logo_chat-removebg-preview.png" style="height: 45px; width: 45px;" alt=""></a>
             </div>
-            <div id="userImage"></div>
+            <div class="m-auto" id="userImage"></div>
           </div>
+          <div class="m-auto ms-2 sm-hidden" id="userName"></div>
         </div>
       </div>
     </div>
     <button onclick="signO()" class="btn signo btn-outline-success" style="background-color: rgb(30, 216, 223);" type="submit">Sign Out</button>
     </nav>
-    <h1>Welcome </h1>
   <div id="display"></div>
+
+  <main class="main2 d-flex align-items-center">
+      <h2>FireText</h2>
+
+      <div class="w-100 d-flex align-items-center">
+        <main id="" class="d-flex gap-2 w-75 justify-content-center gap-4 mainnning">
+          <!-- <div class="w-75 d-flex gap-4">
+            <input
+              type="text"
+              name=""
+              id="postMsg"
+              class="form-control p-2"
+              placeholder="Write a post"
+            />
+            <button class="w-25" id="postMsgBtn">Post</button>
+          </div> -->
+          <a href="newsfeed.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="40"
+              height="40"
+              viewBox="0 0 50 50"
+              style="fill: #ffffff"
+            >
+              <path
+                d="M 24.962891 1.0546875 A 1.0001 1.0001 0 0 0 24.384766 1.2636719 L 1.3847656 19.210938 A 1.0005659 1.0005659 0 0 0 2.6152344 20.789062 L 4 19.708984 L 4 46 A 1.0001 1.0001 0 0 0 5 47 L 18.832031 47 A 1.0001 1.0001 0 0 0 19.158203 47 L 30.832031 47 A 1.0001 1.0001 0 0 0 31.158203 47 L 45 47 A 1.0001 1.0001 0 0 0 46 46 L 46 19.708984 L 47.384766 20.789062 A 1.0005657 1.0005657 0 1 0 48.615234 19.210938 L 41 13.269531 L 41 6 L 35 6 L 35 8.5859375 L 25.615234 1.2636719 A 1.0001 1.0001 0 0 0 24.962891 1.0546875 z M 25 3.3222656 L 44 18.148438 L 44 45 L 32 45 L 32 26 L 18 26 L 18 45 L 6 45 L 6 18.148438 L 25 3.3222656 z M 37 8 L 39 8 L 39 11.708984 L 37 10.146484 L 37 8 z M 20 28 L 30 28 L 30 45 L 20 45 L 20 28 z"
+              ></path>
+            </svg>
+          </a>
+          <a href="chatroom.html">
+            <img
+              width="40"
+              height="40"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/chat.png"
+              alt="chat"
+            />
+          </a>
+        </main>
+        <div id="display"></div>
+      </div>
+    </main>
+
+
+    <section class="containerheight d-flex">
+      <main class="chatUs">
+
+        <div id="displayChat" class="wl100 p-3 pb-5"></div>
+        
+
+      </main>
+      <div class=" w100 p-3">
+        <input type="text" id="chatH" class="w-75 w753" placeholder="Type your chat"/>
+        <img width="40" height="40" src="https://img.icons8.com/ios-glyphs/30/940101/sent.png" alt="sent" onclick="submitData()" class=" ms-5 mt-1"/>
+      <!-- <button class="" >send</button> -->
+      </div>
+    </section>
 
 
 
