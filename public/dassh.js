@@ -11,7 +11,7 @@ import {
     ref,
     set,
     onValue,
-  } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,7 +30,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
-let startPoint = 0;
+// let startPoint = 0;
 
 
 onAuthStateChanged(auth, (user) => {
@@ -41,11 +41,11 @@ onAuthStateChanged(auth, (user) => {
       let dispImg = user.photoURL;
   
       if (Cname == null && dispImg == null) {
-        userName.innerHTML = `
+        display.innerHTML = `
       <p class="m-auto">${maily}</p>
       `;
     } else {
-      userName.innerHTML = `
+      display.innerHTML = `
       <p class="m-auto">${Cname}</p>
       `;
       userImage.innerHTML = `
@@ -82,7 +82,7 @@ const scrollToBottom = () => {
 const submitData = () => {
   let date = new Date().toLocaleDateString();
   let time = new Date().toLocaleTimeString();
-  let chatHr = document.getElementById('chatH');
+  let chatHr = chatH.value;
   onAuthStateChanged(auth, (user) => {
     let userName = user.displayName;
     let photo = user.photoURL;
